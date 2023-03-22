@@ -1,0 +1,58 @@
+@import url(./reset.css);
+
+.container {
+  width: min(100% - 30px, 1080px);
+  margin-inline: auto;
+}
+
+/* HEADER */
+
+header {
+  background-color: #1f2229;
+}
+
+header .flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.head-1 h1 {
+  font-size: 25px;
+
+  color: #3e9dff;
+  font-weight: 600;
+  line-height: 49px;
+  letter-spacing: 0.6px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav ul li {
+  display: inline;
+  float: left;
+}
+
+nav ul li a {
+  flex: 1;
+  display: block;
+  padding: 13px 16px;
+  text-align: center;
+  color: #f0f1ff;
+  font-size: 15px;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+
+nav ul li a:hover,
+a:focus,
+a:active {
+  color: #3e9dff;
+}
+
+/* HEADER ENDS */
