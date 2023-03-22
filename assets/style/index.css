@@ -56,3 +56,53 @@ a:active {
 }
 
 /* HEADER ENDS */
+
+/* MAIN */
+
+#form,
+#posts {
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: 500px;
+  height: 200px;
+  margin: 3rem 0rem;
+  border-radius: 5px;
+  background-color: #1f2229;
+}
+
+form textarea {
+  width: 500px;
+  height: 132px;
+  background-color: #1f2229;
+  font-size: 16px;
+  color: #7f8084;
+  padding: 15px;
+  resize: none;
+}
+
+.up-post {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.image-upload > input {
+  display: none;
+}
+
+form input[type="submit"] {
+  background-color: #3e9dff;
+  border-radius: 5px;
+  color: #fff;
+  letter-spacing: 0.4px;
+  padding: 8px 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* MAIN ENDS */
