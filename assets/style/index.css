@@ -1,5 +1,7 @@
 @import url(./reset.css);
 
+/* CONTAINER */
+
 .container {
   width: min(100% - 30px, 1080px);
   margin-inline: auto;
@@ -18,8 +20,7 @@ header .flex {
 
 .head-1 h1 {
   font-size: 25px;
-
-  color: #3e9dff;
+  color: #2993ff;
   font-weight: 600;
   line-height: 49px;
   letter-spacing: 0.6px;
@@ -52,57 +53,135 @@ nav ul li a {
 nav ul li a:hover,
 a:focus,
 a:active {
-  color: #3e9dff;
+  background-color: #2993ff;
+}
+
+.icon-1 {
+  margin: auto 0;
+  cursor: pointer;
+}
+
+.icon-1 img {
+  height: 50px;
 }
 
 /* HEADER ENDS */
 
 /* MAIN */
 
-#form,
-#posts {
-  display: grid;
-  text-align: center;
+.inputs {
+  width: 600px;
+  height: auto;
+  margin: 30px auto 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-}
-
-form {
-  width: 500px;
-  height: 200px;
-  margin: 3rem 0rem;
   border-radius: 5px;
-  background-color: #1f2229;
+  background-color: #1b1c1e;
+  margin-bottom: 3rem;
 }
 
-form textarea {
-  width: 500px;
-  height: 132px;
-  background-color: #1f2229;
+.text {
+  letter-spacing: 0.4px;
   font-size: 16px;
-  color: #7f8084;
-  padding: 15px;
+  background-color: transparent;
   resize: none;
+  color: #fff;
 }
 
-.up-post {
+.box {
   display: flex;
   justify-content: space-between;
-  padding: 15px;
 }
 
-.image-upload > input {
+#post {
+  text-align: center;
+  padding: 8px 20px;
+  border-radius: 5px;
+  background-color: #2993ff;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#post:active {
+  border: 1px solid #000;
+}
+
+span {
+  font-size: 16px;
+  color: var(--app-grey);
+}
+
+.grid {
+  border-radius: 5px;
+  display: grid;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.post {
+  width: 600px;
+  min-height: 110px;
+  height: fit-content;
+  padding: 10px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.postHead {
+  display: flex;
+  justify-content: space-between;
+  line-height: 40px;
+  font-size: 17px;
+  letter-spacing: 0.2px;
+}
+
+.postHead img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 10px;
+}
+
+.postBody {
+  margin: 15px 0px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#postFile {
   display: none;
 }
 
-form input[type="submit"] {
-  background-color: #3e9dff;
-  border-radius: 5px;
-  color: #fff;
-  letter-spacing: 0.4px;
-  padding: 8px 18px;
-  text-align: center;
+.postFile {
+  padding-top: 8px;
   cursor: pointer;
+}
+
+.postFile i {
+  font-size: 30px;
+}
+
+.icon-1:focus .revert {
+  display: block;
+}
+
+.icon-1 .revert {
+  display: none;
+  position: absolute;
+  background-color: #3c3f4b;
+  padding: 10px;
+  min-width: 200px;
+  top: 80px;
+  right: 85px;
+  /* z-index: 1; */
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
 }
 
 /* MAIN ENDS */

@@ -2,21 +2,24 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fakebook</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-  <link rel="shortcut icon" href="./assets/images/logo.png" media="all">
+  <title>FakeBook</title>
   <link rel="stylesheet" href="./assets/style/index.css" media="all">
-  <script src="./assets/script/index.js" defer></script>
+  <script defer src="./assets/script/index.js"></script>
+  <link rel="Shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
 </head>
 
-<body>
+<body data-new-gr-c-s-check-loaded="14.1101.0" data-gr-ext-installed="">
   <header>
     <div class="container flex">
       <div class="head-1">
@@ -27,35 +30,34 @@
           <li><a href="#">Friends</a></li>
           <li><a href="#">Pages</a></li>
           <li><a href="#">Groups</a></li>
-          <li><a href="#">My ads</a></li>
+          <li><a href="#">My Ads</a></li>
           <li><a href="#">Settings</a></li>
         </ul>
       </nav>
-      <img src="./assets/images/logo.png">
+      <div class="icon-1">
+        <img src="./assets/images/logo.png" title="icon">
+        <div class="revert"></div>
+      </div>
     </div>
   </header>
+
   <main>
-    <section id="form">
-      <form>
-        <textarea>What's new, Astaad?</textarea>
-        <div class="up-post">
-          <div class="image-upload">
-            <label for="file">
-              <i class="fa-solid fa-image fa-beat fa-lg" style="color: #3e9dff;"></i>
-            </label>
-
-            <input id="file" type="file" />
-
-          </div>
-
-          <input type="submit" name="submit" id="submit" value="Post">
+    <div class="container">
+      <div class="inputs">
+        <textarea name="post" class="text" rows="5" placeholder="What's on your mind, Astaad?"></textarea>
+        <div class="box">
+          <label for="postFile" class="postFile">
+            <i class="fa-solid fa-image"></i>
+            <span class="inputName"></span>
+          </label>
+          <input type="file" name="post" id="postFile">
+          <button id="post">Post</button>
         </div>
-      </form>
-    </section>
-    <section id="posts">
+      </div>
+      <div class="grid">
 
-    </section>
-
+      </div>
+    </div>
   </main>
 </body>
 
