@@ -61,7 +61,6 @@ a:active {
   cursor: pointer;
 }
 
-.postHead,
 .icon-1 img {
   height: 40px;
   width: 40px;
@@ -138,6 +137,14 @@ span {
   line-height: 40px;
   font-size: 17px;
   letter-spacing: 0.2px;
+}
+
+.postHead img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 10px;
 }
 
 .postBody {

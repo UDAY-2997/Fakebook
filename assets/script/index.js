@@ -117,26 +117,42 @@ submitFile.addEventListener("focus", function () {
 });
 
 function addContent(newdiv) {
+  // Create post header
   const postHead = document.createElement("div");
   postHead.classList.add("postHead");
 
-  const date = new Date();
-  const format = { month: "short", day: "numeric", year: "numeric" };
-  const formattedDate = date.toLocaleDateString("en-US", format);
+  const logoImg = document.createElement("img");
+  logoImg.classList.add("img");
+  logoImg.src = "./assets/images/logo.png";
 
-  postHead.innerHTML = `<div>
-                          <img class='img' src="./assets/images/logo.png" 
-                          alt="user-icon"><span>U-dev</span></div>
-                          <p>${formattedDate}</p>`;
+  const companyName = document.createElement("span");
+  const companyNameText = document.createTextNode("U-dev");
+  const companyNameStrong = document.createElement("strong");
+  companyNameStrong.appendChild(companyNameText);
+  companyName.appendChild(companyNameStrong);
 
+  const logoAndCompanyName = document.createElement("span");
+  logoAndCompanyName.appendChild(logoImg);
+  logoAndCompanyName.appendChild(companyName);
+
+  const date = document.createElement("p");
+  const formattedDate = new Date().toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+  date.textContent = formattedDate;
+
+  postHead.append(logoImg, companyName, date);
   newdiv.append(postHead);
 
+  // Create post body
   const postBody = document.createElement("div");
   postBody.classList.add("postBody");
-  postBody.innerText = textArea.value;
-
+  postBody.textContent = textArea.value;
   newdiv.append(postBody);
 
+  // Add image if selected
   if (uploadFile.files.length > 0) {
     const file = uploadFile.files[0];
     const reader = new FileReader();
@@ -150,6 +166,7 @@ function addContent(newdiv) {
     });
   }
 
+  // Clear input fields
   textArea.value = "";
   fileName.innerHTML = ``;
   uploadFile.value = "";
