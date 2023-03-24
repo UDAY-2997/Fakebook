@@ -61,15 +61,20 @@ a:active {
   cursor: pointer;
 }
 
+.postHead,
 .icon-1 img {
-  height: 50px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 10px;
 }
 
 /* HEADER ENDS */
 
 /* MAIN */
 
-.inputs {
+#form {
   width: 600px;
   height: auto;
   margin: 30px auto 0;
@@ -78,11 +83,11 @@ a:active {
   flex-direction: column;
   justify-content: center;
   border-radius: 5px;
-  background-color: #1b1c1e;
+  background-color: #1f2229;
   margin-bottom: 3rem;
 }
 
-.text {
+#textarea {
   letter-spacing: 0.4px;
   font-size: 16px;
   background-color: transparent;
@@ -90,12 +95,12 @@ a:active {
   color: #fff;
 }
 
-.box {
+#content {
   display: flex;
   justify-content: space-between;
 }
 
-#post {
+#submit-file {
   text-align: center;
   padding: 8px 20px;
   border-radius: 5px;
@@ -105,19 +110,15 @@ a:active {
   cursor: pointer;
 }
 
-#post:active {
-  border: 1px solid #000;
-}
-
 span {
   font-size: 16px;
-  color: var(--app-grey);
 }
 
-.grid {
+#post-area {
   border-radius: 5px;
   display: grid;
   justify-content: center;
+  align-items: center;
   gap: 3rem;
 }
 
@@ -139,38 +140,30 @@ span {
   letter-spacing: 0.2px;
 }
 
-.postHead img {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  float: left;
-  margin-right: 10px;
-}
-
 .postBody {
   margin: 15px 0px;
   font-size: 16px;
   font-weight: 400;
 }
 
-#postFile {
+#upload-file {
   display: none;
 }
 
-.postFile {
+.upload-file {
   padding-top: 8px;
   cursor: pointer;
 }
 
-.postFile i {
+.upload-file i {
   font-size: 30px;
 }
 
-.icon-1:focus .revert {
+.icon-1:focus #account-info {
   display: block;
 }
 
-.icon-1 .revert {
+.icon-1 #account-info {
   display: none;
   position: absolute;
   background-color: #3c3f4b;
@@ -178,10 +171,60 @@ span {
   min-width: 200px;
   top: 80px;
   right: 85px;
-  /* z-index: 1; */
   color: #fff;
   font-size: 16px;
   border-radius: 5px;
 }
 
 /* MAIN ENDS */
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    margin: 0 15px;
+  }
+  #form {
+    width: 90%;
+    padding: 10px;
+  }
+  .post {
+    width: 90%;
+  }
+  .icon-1 #account-info {
+    top: 60px;
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .head-1 h1 {
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  nav ul li a {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .postHead,
+  .icon-1 img {
+    height: 20px;
+    width: 20px;
+  }
+
+  #form {
+    width: 90%;
+    padding: 8px;
+  }
+
+  .post {
+    width: 100%;
+  }
+
+  .icon-1 #account-info {
+    top: 40px;
+    right: -30px;
+  }
+}

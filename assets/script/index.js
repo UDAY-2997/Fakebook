@@ -1,11 +1,4 @@
 "use strict";
-const postBtn = document.querySelector("#post");
-const grid = document.querySelector(".grid");
-const iconInfo = document.querySelector(".revert");
-const textArea = document.querySelector(".text");
-const postFile = document.querySelector("#postFile");
-const inputName = document.querySelector(".inputName");
-const icon = document.querySelector(".icon-1");
 
 class User {
   #id;
@@ -74,32 +67,41 @@ class Subscriber extends User {
 const mainUser = new Subscriber(
   "1",
   "Uday",
-  "Astaad",
+  "U-dev",
   "uv@gmail.com",
   ["AI", "AR"],
   ["MITT"],
   true
 );
 
-iconInfo.innerText = mainUser.getInfo();
+const fileName = document.querySelector("#file-name");
+const uploadFile = document.querySelector("#upload-file");
+const icon = document.querySelector(".icon-1");
+const accountInfo = document.querySelector("#account-info");
 
-icon.addEventListener("mouseover", () => {
-  iconInfo.style.display = "block";
-});
+accountInfo.innerText = mainUser.getInfo();
 
-icon.addEventListener("mouseout", () => {
-  iconInfo.style.display = "none";
-});
-
-postFile.addEventListener("input", function () {
-  const imageFile = postFile.files;
-  for (let file of imageFile) {
-    inputName.innerHTML = `${file.name}`;
+icon.addEventListener("click", () => {
+  if (accountInfo.style.display === "block") {
+    accountInfo.style.display = "none";
+  } else {
+    accountInfo.style.display = "block";
   }
 });
 
-postBtn.addEventListener("focus", function () {
-  const imageFile = postFile.files;
+uploadFile.addEventListener("input", function () {
+  const imageFile = uploadFile.files;
+  for (let file of imageFile) {
+    fileName.innerHTML = `${file.name}`;
+  }
+});
+
+const submitFile = document.querySelector("#submit-file");
+const postArea = document.querySelector("#post-area");
+const textArea = document.querySelector("#textarea");
+
+submitFile.addEventListener("focus", function () {
+  const imageFile = uploadFile.files;
   const textFile = textArea.value;
 
   if (textFile.length <= 0 && imageFile.length <= 0) {
@@ -110,7 +112,7 @@ postBtn.addEventListener("focus", function () {
     console.log("hey there");
     addContent(newDiv);
 
-    grid.insertBefore(newDiv, grid.firstChild);
+    postArea.insertBefore(newDiv, postArea.firstChild);
   }
 });
 
@@ -124,7 +126,7 @@ function addContent(newdiv) {
 
   postHead.innerHTML = `<div>
                           <img class='img' src="./assets/images/logo.png" 
-                          alt="user-icon"><span>UdayHere</span></div>
+                          alt="user-icon"><span>U-dev</span></div>
                           <p>${formattedDate}</p>`;
 
   newdiv.append(postHead);
@@ -135,8 +137,8 @@ function addContent(newdiv) {
 
   newdiv.append(postBody);
 
-  if (postFile.files.length > 0) {
-    const file = postFile.files[0];
+  if (uploadFile.files.length > 0) {
+    const file = uploadFile.files[0];
     const reader = new FileReader();
 
     reader.readAsDataURL(file);
@@ -149,6 +151,6 @@ function addContent(newdiv) {
   }
 
   textArea.value = "";
-  inputName.innerHTML = ``;
-  postFile.value = "";
+  fileName.innerHTML = ``;
+  uploadFile.value = "";
 }

@@ -36,25 +36,25 @@
       </nav>
       <div class="icon-1">
         <img src="./assets/images/logo.png" title="icon">
-        <div class="revert"></div>
+        <div id="account-info"></div>
       </div>
     </div>
   </header>
 
   <main>
     <div class="container">
-      <div class="inputs">
-        <textarea name="post" class="text" rows="5" placeholder="What's on your mind, Astaad?"></textarea>
-        <div class="box">
-          <label for="postFile" class="postFile">
+      <div id="form">
+        <textarea name="textarea" id="textarea" rows="6" placeholder="What's going on, Uday?"></textarea>
+        <div id="content">
+          <label for="upload-file" class="upload-file">
             <i class="fa-solid fa-image"></i>
-            <span class="inputName"></span>
+            <span id="file-name"></span>
           </label>
-          <input type="file" name="post" id="postFile">
-          <button id="post">Post</button>
+          <input type="file" name="upload-file" id="upload-file">
+          <button id="submit-file">Post</button>
         </div>
       </div>
-      <div class="grid">
+      <div id="post-area">
 
       </div>
     </div>
